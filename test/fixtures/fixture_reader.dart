@@ -5,9 +5,13 @@ String _fixture(String fileName) {
 }
 
 String readTrivial() {
-  return _fixture('trivial.json');
+  return _fixture('trivia.json');
 }
 
 String readTrivialDouble() {
-  return _fixture('trivial-double.json');
+  return _fixture('trivia-double.json');
+}
+
+String readTriviaCached() {
+  return _fixture('trivia_cached.json');
 }

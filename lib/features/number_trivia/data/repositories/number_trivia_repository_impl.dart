@@ -40,8 +40,10 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
         localDataSource.cacheNumberTrivia(numberTriviaModel);
 
         return Right(numberTriviaModel);
-      } catch (e) {
+      } on ServerException {
         return Left(ServerFailure());
+      } on CacheException {
+        return Left(CacheFailure());
       }
     } else {
       try {

@@ -91,6 +91,18 @@ void main() {
       });
 
       test(
+          'should return cacheFailure when cacheNumberTrivia throw a cacheException',
+          () async {
+        validArrange();
+        when(mockLocalDataSource.cacheNumberTrivia(any))
+            .thenThrow(CacheException());
+
+        final result = await act();
+
+        expect(result, Left(CacheFailure()));
+      });
+
+      test(
           'should return server failure when the call to remote data source is unsuccessful',
           () async {
         exceptionArrange();
