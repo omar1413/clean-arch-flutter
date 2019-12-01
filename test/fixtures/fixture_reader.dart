@@ -4,11 +4,11 @@ String _fixture(String fileName) {
   return File('test/fixtures/$fileName').readAsStringSync();
 }
 
-String readTrivial() {
+String readTrivia() {
   return _fixture('trivia.json');
 }
 
-String readTrivialDouble() {
+String readTriviaDouble() {
   return _fixture('trivia-double.json');
 }
 
