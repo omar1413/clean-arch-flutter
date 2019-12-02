@@ -24,12 +24,12 @@ void main() {
 
   void setupMockApiSuccess200() {
     when(mockApi.get(any, headers: anyNamed('headers')))
-        .thenAnswer((_) async => Response(readTrivial(), 200));
+        .thenAnswer((_) async => Response(readTrivia(), 200));
   }
 
   void setupMockApiFailure404() {
     when(mockApi.get(any, headers: anyNamed('headers')))
-        .thenAnswer((_) async => Response(readTrivial(), 404));
+        .thenAnswer((_) async => Response(readTrivia(), 404));
   }
 
   group('getConcreteNumberTrivia', () {
@@ -42,7 +42,7 @@ void main() {
 
     final tNumber = 1;
     final tNumberTriviaModel =
-        NumberTriviaModel.fromJson(json.decode(readTrivial()));
+        NumberTriviaModel.fromJson(json.decode(readTrivia()));
     test(
         'should Get request with number endpoint with content type apllication/json',
         () async {
@@ -83,7 +83,7 @@ void main() {
     }
 
     final tNumberTriviaModel =
-        NumberTriviaModel.fromJson(json.decode(readTrivial()));
+        NumberTriviaModel.fromJson(json.decode(readTrivia()));
     test(
         'should Get request with number endpoint with content type apllication/json',
         () async {
